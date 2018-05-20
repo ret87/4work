@@ -1,33 +1,74 @@
-*{
-    box-sizing: border-box;
-}
-.outline {
-    outline: 3px solid white; 
-}
-
 .grid {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
-.row::before,
-.row::after {
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    padding: 1%;
+}
+
+.grid:before,
+.grid:after {
     content: '';
     display: table;
     clear: both;
 }
-[class*='col-'] {
-    float: left;
-    min-height: 1px;
-    padding: 1rem;
+/* [class*='col-']:before,
+[class*='col-']:after {
+    content: '';
+    display: table;
+    clear: both;
+} */
+
+
+/* отступы */
+
+.grid-pad {
+    padding: 1% 0%;
 }
-[class*='col-'] > p {
-    /* background-color: #FFC2C2;  */
+.grid-pad [class*='col-']:last-of-type {
+    padding-right: 1%;
+}    
+.grid-pad [class*='col-']:first-of-type {
+    padding-left: 1%;
+}
+
+.outline {
+    outline: .4rem solid grey; 
+    background: whitesmoke
+}
+
+[class*='col-'] {
+   padding-right: 1%;
+}
+[class*='col-']:last-of-type {
+   padding-right: 0;
+}
+[class*='col-']:first-of-type {
+    padding-left: 0;
+}
+
+.module {
+    padding: 1%;
+    background: grey;
+}
+
+/* оступы и центр Р */
+
+[class*='col-'] p {
     padding: 0;
     margin: 0;
     text-align: center; 
-    color: blue; 
 }
+[class*='col-'] h3 {
+    padding: 0;
+    margin: 0;
+}
+
+/* размеры блоков сетки */
+
 .col-1-12 {
     width: 8.3333%;
 }
